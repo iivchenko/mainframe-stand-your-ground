@@ -1,5 +1,4 @@
 using Godot;
-using System;
 
 public partial class Player : CharacterBody2D
 {
@@ -10,6 +9,8 @@ public partial class Player : CharacterBody2D
 	public float gravity = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
 
 	private AnimatedSprite2D _sprite;
+	private Marker2D _left;
+	private Marker2D _right;
 
 	[Export]
 	public PlayerOrientation Orientation { get; set; }
@@ -19,6 +20,8 @@ public partial class Player : CharacterBody2D
 		base._Ready();
 
 		_sprite = GetNode<AnimatedSprite2D>("Sprite");
+		_left = GetNode<Marker2D>("LeftFirePoint");
+		_right = GetNode<Marker2D>("RightFirePoint");
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -70,8 +73,37 @@ public partial class Player : CharacterBody2D
 				break;
 		}
 
+		if (Input.IsActionJustPressed("player_fire"))
+		{
+			Fire();
+		}
+
 		Velocity = velocity;
 		MoveAndSlide();
+	}
+
+	private void Fire()
+	{
+		switch (Orientation)
+		{
+			case PlayerOrientation.Left:
+				SpawnBullet(_left.GlobalPosition, Vector2.Left);
+				break;         
+			case PlayerOrientation.Right:
+				SpawnBullet(_right.GlobalPosition, Vector2.Right);
+				break;
+		}
+	}
+
+	private void SpawnBullet(Vector2 position, Vector2 direction)
+	{
+		var scene = (PackedScene)ResourceLoader.Load("res://entities/bullet.tscn");
+		var bullet = scene.Instantiate<Bullet>();
+
+		bullet.GlobalPosition =	position;
+		bullet.Direction = direction;
+
+		GetParent().AddChild(bullet);
 	}
 }
 

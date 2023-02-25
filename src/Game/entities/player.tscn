@@ -73,11 +73,21 @@ height = 16.0
 collision_layer = 2
 script = ExtResource("1_vkkpa")
 
+[node name="RightFirePoint" type="Marker2D" parent="."]
+position = Vector2(7.38977, 0.417609)
+metadata/_edit_lock_ = true
+
+[node name="LeftFirePoint" type="Marker2D" parent="."]
+position = Vector2(-7.49305, 0.496354)
+metadata/_edit_lock_ = true
+
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ff4pd")
-animation = &"idle"
+animation = &"walk_side"
 autoplay = "idle"
-frame_progress = 0.853781
+frame_progress = 0.940549
+metadata/_edit_lock_ = true
 
 [node name="Body" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_purda")
+metadata/_edit_lock_ = true
