@@ -1,5 +1,5 @@
 ﻿$gVersion = "4.0"
-$subVersion="rc1"
+$subVersion="rc5"
 
 $urlFolder=If ($subVersion) {"$gVersion/$subVersion"} Else {"$gVersion"}
 $folder=If ($subVersion) {"Godot_v$gVersion-$subVersion" + "_mono_win64"} Else {"Godot_v$gVersion-stable_mono_win64"}
