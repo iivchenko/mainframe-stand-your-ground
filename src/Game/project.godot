@@ -29,6 +29,17 @@ project/solution_directory=".."
 
 version="0.1.0"
 
+[layer_names]
+
+2d_physics/layer_1="Ground"
+2d_physics/layer_2="Player"
+2d_physics/layer_3="Player Bullets"
+2d_physics/layer_4="Enemy"
+2d_physics/layer_5="Enemy Bullerts"
+2d_physics/layer_6="Interactibles"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)
+textures/canvas_textures/default_texture_filter=0
