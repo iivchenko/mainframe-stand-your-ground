@@ -71,6 +71,7 @@ height = 16.0
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
+collision_mask = 9
 script = ExtResource("1_vkkpa")
 
 [node name="RightFirePoint" type="Marker2D" parent="."]
@@ -85,7 +86,7 @@ metadata/_edit_lock_ = true
 sprite_frames = SubResource("SpriteFrames_ff4pd")
 animation = &"walk_side"
 autoplay = "idle"
-frame_progress = 0.193671
+frame_progress = 0.933824
 metadata/_edit_lock_ = true
 
 [node name="Body" type="CollisionShape2D" parent="."]

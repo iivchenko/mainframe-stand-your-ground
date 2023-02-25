@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://gehip70038pi"]
+
+[ext_resource type="Script" path="res://entities/EnemySpawner.cs" id="1_6e8b7"]
+
+[node name="EnemySpawner" type="Marker2D"]
+gizmo_extents = 15.0
+script = ExtResource("1_6e8b7")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
