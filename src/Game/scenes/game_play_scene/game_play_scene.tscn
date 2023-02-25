@@ -97,7 +97,7 @@ grow_vertical = 2
 script = ExtResource("1_1n6nh")
 
 [node name="Player" parent="." instance=ExtResource("3_kvtkc")]
-position = Vector2(240, 189)
+position = Vector2(240, 201)
 platform_floor_layers = 1
 
 [node name="World" type="TileMap" parent="."]

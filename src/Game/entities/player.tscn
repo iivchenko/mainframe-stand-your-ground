@@ -13,11 +13,11 @@ region = Rect2(0, 0, 32, 32)
 atlas = ExtResource("2_qy7cl")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xpvg7"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_4a2wi"]
 atlas = ExtResource("3_duwiy")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_g0k82"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_r56f3"]
 atlas = ExtResource("3_duwiy")
 region = Rect2(32, 0, 32, 32)
 
@@ -44,10 +44,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xpvg7")
+"texture": SubResource("AtlasTexture_4a2wi")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_g0k82")
+"texture": SubResource("AtlasTexture_r56f3")
 }],
 "loop": true,
 "name": &"idle_side",
@@ -74,18 +74,18 @@ collision_layer = 2
 script = ExtResource("1_vkkpa")
 
 [node name="RightFirePoint" type="Marker2D" parent="."]
-position = Vector2(7.38977, 0.417609)
+position = Vector2(7.47816, 1.43408)
 metadata/_edit_lock_ = true
 
 [node name="LeftFirePoint" type="Marker2D" parent="."]
-position = Vector2(-7.49305, 0.496354)
+position = Vector2(-7.58144, 1.42443)
 metadata/_edit_lock_ = true
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ff4pd")
 animation = &"walk_side"
 autoplay = "idle"
-frame_progress = 0.940549
+frame_progress = 0.193671
 metadata/_edit_lock_ = true
 
 [node name="Body" type="CollisionShape2D" parent="."]
