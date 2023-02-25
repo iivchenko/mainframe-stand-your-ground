@@ -1,0 +1,83 @@
+[gd_scene load_steps=13 format=3 uid="uid://lxbfmgyx0570"]
+
+[ext_resource type="Script" path="res://entities/Player.cs" id="1_vkkpa"]
+[ext_resource type="Texture2D" uid="uid://g50kyeitmeok" path="res://assets/sprites/player_idle_front.png" id="2_qy7cl"]
+[ext_resource type="Texture2D" uid="uid://cdtuqofhctp8q" path="res://assets/sprites/player_idle_side.png" id="3_duwiy"]
+[ext_resource type="Texture2D" uid="uid://cfwtockonswhs" path="res://assets/sprites/player_walk_side.png" id="4_nlhwk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smddf"]
+atlas = ExtResource("2_qy7cl")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qqr24"]
+atlas = ExtResource("2_qy7cl")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xpvg7"]
+atlas = ExtResource("3_duwiy")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g0k82"]
+atlas = ExtResource("3_duwiy")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ekrki"]
+atlas = ExtResource("4_nlhwk")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_shh7e"]
+atlas = ExtResource("4_nlhwk")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ff4pd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_smddf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qqr24")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xpvg7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g0k82")
+}],
+"loop": true,
+"name": &"idle_side",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ekrki")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_shh7e")
+}],
+"loop": true,
+"name": &"walk_side",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_purda"]
+radius = 4.0
+height = 16.0
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_vkkpa")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ff4pd")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.853781
+
+[node name="Body" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_purda")

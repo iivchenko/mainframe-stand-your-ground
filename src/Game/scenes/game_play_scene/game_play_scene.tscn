@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://h3jg6ok5y1c2"]
+[gd_scene load_steps=6 format=3 uid="uid://h3jg6ok5y1c2"]
 
 [ext_resource type="Script" path="res://scenes/game_play_scene/GamePlayScene.cs" id="1_1n6nh"]
 [ext_resource type="Texture2D" uid="uid://6kbufilbqdx8" path="res://assets/sprites/tileset.png" id="1_l2s82"]
+[ext_resource type="PackedScene" uid="uid://lxbfmgyx0570" path="res://entities/player.tscn" id="3_kvtkc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lslbf"]
 texture = ExtResource("1_l2s82")
@@ -83,7 +84,7 @@ separation = Vector2i(1, 1)
 
 [sub_resource type="TileSet" id="TileSet_h2k8j"]
 physics_layer_0/collision_layer = 1
-physics_layer_0/collision_mask = 30
+physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_lslbf")
 
 [node name="GamePlayScene" type="Control"]
@@ -94,6 +95,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1n6nh")
+
+[node name="Player" parent="." instance=ExtResource("3_kvtkc")]
+position = Vector2(240, 189)
+platform_floor_layers = 1
 
 [node name="World" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_h2k8j")
