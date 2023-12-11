@@ -5,6 +5,8 @@ using Godot;
 //[GameEntity]
 public partial class MainMenuScene : Control
 {
+    public static string Path = "res://scenes/main_menu_scene/main_menu_scene.tscn";
+
     private Label _versionLbl;
 
     // TODO: 

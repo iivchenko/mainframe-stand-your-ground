@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://cb4wm5mhn25im"]
+[gd_scene load_steps=5 format=3 uid="uid://cb4wm5mhn25im"]
 
+[ext_resource type="Script" path="res://scenes/splash_screen_scene/SplashScreenScene.cs" id="1_0s36t"]
 [ext_resource type="Texture2D" uid="uid://c4krwqixtuyn7" path="res://assets/sprites/splash_screen.png" id="1_q3ssg"]
 [ext_resource type="AudioStream" uid="uid://dl6m2wh1i8lo8" path="res://assets/sfx/chalicewell-cat-purring.wav" id="2_jux71"]
 [ext_resource type="AudioStream" uid="uid://b83b3hn6ll4dm" path="res://assets/sfx/skymary-cat-meow.wav" id="3_hpeyo"]
@@ -10,6 +11,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("1_0s36t")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 2
@@ -22,10 +25,13 @@ layout_mode = 2
 layout_mode = 2
 texture = ExtResource("1_q3ssg")
 
+[node name="Fade" type="ColorRect" parent="."]
+layout_mode = 2
+color = Color(0, 0, 0, 0)
+
 [node name="CatPurring" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_jux71")
 autoplay = true
 
 [node name="CatMeow" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_hpeyo")
-autoplay = true
