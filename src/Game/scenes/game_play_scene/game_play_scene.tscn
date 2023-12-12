@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://h3jg6ok5y1c2"]
+[gd_scene load_steps=8 format=3 uid="uid://h3jg6ok5y1c2"]
 
 [ext_resource type="Script" path="res://scenes/game_play_scene/GamePlayScene.cs" id="1_1n6nh"]
+[ext_resource type="Theme" uid="uid://0l6x8np8e4hw" path="res://assets/ui_theme.tres" id="1_4hs8r"]
 [ext_resource type="Texture2D" uid="uid://6kbufilbqdx8" path="res://assets/sprites/tileset.png" id="1_l2s82"]
 [ext_resource type="PackedScene" uid="uid://lxbfmgyx0570" path="res://entities/player.tscn" id="3_kvtkc"]
 [ext_resource type="PackedScene" uid="uid://gehip70038pi" path="res://entities/enemy_spawner.tscn" id="4_j6jgm"]
@@ -93,13 +94,17 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 30.0
-offset_top = -2.0
-offset_right = 30.0
-offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_vertical = 4
+theme = ExtResource("1_4hs8r")
 script = ExtResource("1_1n6nh")
+
+[node name="LivesLbl" type="Label" parent="."]
+layout_mode = 0
+offset_right = 62.0
+offset_bottom = 38.0
+text = "Lives: X"
 
 [node name="World" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_h2k8j")
@@ -113,6 +118,38 @@ layer_1/tile_data = PackedInt32Array(917516, 262144, 0, 1048589, 262144, 1, 9830
 position = Vector2(240, 201)
 platform_floor_layers = 1
 
-[node name="EnemySpawner02" parent="." instance=ExtResource("4_j6jgm")]
-position = Vector2(-8, 186)
+[node name="EnemySpawner01" parent="." instance=ExtResource("4_j6jgm")]
+position = Vector2(-8, 40)
 Direction = Vector2(1, 0)
+
+[node name="EnemySpawner02" parent="." instance=ExtResource("4_j6jgm")]
+position = Vector2(-8, 87)
+Direction = Vector2(1, 0)
+
+[node name="EnemySpawner03" parent="." instance=ExtResource("4_j6jgm")]
+position = Vector2(-6, 137)
+Direction = Vector2(1, 0)
+
+[node name="EnemySpawner04" parent="." instance=ExtResource("4_j6jgm")]
+position = Vector2(-8, 249)
+Direction = Vector2(1, 0)
+
+[node name="EnemySpawner05" parent="." instance=ExtResource("4_j6jgm")]
+position = Vector2(488, 249)
+Direction = Vector2(-1, 0)
+
+[node name="EnemySpawner06" parent="." instance=ExtResource("4_j6jgm")]
+position = Vector2(489, 185)
+Direction = Vector2(-1, 0)
+
+[node name="EnemySpawner07" parent="." instance=ExtResource("4_j6jgm")]
+position = Vector2(489, 136)
+Direction = Vector2(-1, 0)
+
+[node name="EnemySpawner08" parent="." instance=ExtResource("4_j6jgm")]
+position = Vector2(491, 86)
+Direction = Vector2(-1, 0)
+
+[node name="EnemySpawner09" parent="." instance=ExtResource("4_j6jgm")]
+position = Vector2(491, 38)
+Direction = Vector2(-1, 0)

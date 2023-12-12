@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://b31v2m8rfr6rd"]
+[gd_scene load_steps=3 format=3 uid="uid://b31v2m8rfr6rd"]
+
+[ext_resource type="Theme" uid="uid://0l6x8np8e4hw" path="res://assets/ui_theme.tres" id="1_7iyts"]
+[ext_resource type="Script" path="res://scenes/game_play_scene/game_play_gameover_scene_component/GamePlayGameOverSceneComponent.cs" id="2_abk5w"]
 
 [node name="GamePlayGameOverSceneComponent" type="Control"]
 layout_mode = 3
@@ -7,3 +10,45 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_7iyts")
+script = ExtResource("2_abk5w")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.392157)
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Center"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="GameOverLbl" type="Label" parent="Center/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "GAME OVER"
+
+[node name="VBox" type="VBoxContainer" parent="Center/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="RestartBtn" type="Button" parent="Center/VBoxContainer/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Restart"
+
+[node name="ExitBtn" type="Button" parent="Center/VBoxContainer/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Exit"
