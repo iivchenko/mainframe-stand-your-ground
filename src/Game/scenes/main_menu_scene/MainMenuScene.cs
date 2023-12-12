@@ -66,9 +66,4 @@ public partial class MainMenuScene : Control
 
         fade.Visible = false;
     }
-
-    private void _startBtn_Pressed()
-    {
-        throw new System.NotImplementedException();
-    }
 }

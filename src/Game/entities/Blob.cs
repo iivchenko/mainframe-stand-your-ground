@@ -3,28 +3,28 @@ using Godot;
 
 public partial class Blob : CharacterBody2D, IDamagable
 {
-	private const int Speed = 50;
-	private float gravity = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
+    private const int Speed = 50;
+    private float gravity = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
 
-	[Export]
-	public Vector2 Direction { get; set; }
+    [Export]
+    public Vector2 Direction { get; set; }
 
-	public void ApplyDamage()
-	{
-		QueueFree();
-	}
+    public void ApplyDamage()
+    {
+        QueueFree();
+    }
 
-	public override void _PhysicsProcess(double delta)
-	{
-		var velocity = Velocity;
-		
-		velocity.X = Speed * Direction.X;
+    public override void _PhysicsProcess(double delta)
+    {
+        var velocity = Velocity;
+        
+        velocity.X = Speed * Direction.X;
 
-		if (!IsOnFloor())
-			velocity.Y += gravity * (float)delta;
+        if (!IsOnFloor())
+            velocity.Y += gravity * (float)delta;
 
-		Velocity = velocity;
+        Velocity = velocity;
 
-		MoveAndSlide();		
-	}
+        MoveAndSlide();		
+    }
 }
