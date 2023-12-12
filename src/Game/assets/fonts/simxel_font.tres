@@ -1,0 +1,7 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://dxjq6rilpmcd6"]
+
+[ext_resource type="FontFile" uid="uid://bym6emt7nx5kx" path="res://assets/fonts/simxel.ttf" id="1_ulyax"]
+
+[resource]
+base_font = ExtResource("1_ulyax")
+spacing_top = 11
